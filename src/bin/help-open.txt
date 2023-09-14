@@ -1,0 +1,12 @@
+:open <connName> to <server> as <user> [using <password>] | [prompt]
+   Opens a logical connection <connName> to a server named <server> 
+   logging in as <user>.
+<server> can be of the form <hostname>:<port> or a traditional <serverName> 
+   in the 'interfaces' file.
+   Passwords can be specified via 'using <passowrd>' syntax or entered at the 
+   prompt.
+<server> (including -S command line option) can use JDBC syntax eg:
+    localhost:15030/pubs2?PROTOCOL_CAPTURE=tds_data
+
+For help enter
+:help <topic>; where topic is commands|open|run|*call|output|set|usage|onerror.

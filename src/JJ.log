@@ -1,0 +1,8 @@
+ASE2.master.sa
+1> :status
+status:-
+  Connections:
+    default: on localhost:15500 as 'sa'
+    ASE2: on localhost:15500 as 'sa'
+  Logging: logFilename=JJ.log
+  Version: MiSQL v0.3 20 Sep 2011

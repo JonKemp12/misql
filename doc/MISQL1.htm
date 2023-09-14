@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>MISQL</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0mm;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+ /* Page Definitions */
+ @page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0mm;}
+ul
+	{margin-bottom:0mm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:12.0pt'><b><u><span
+style='font-size:10.0pt;font-family:Tahoma'>MISQL</span></u></b></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><u><span style='font-size:10.0pt;
+font-family:Tahoma'>Multi interactive SQL</span></u></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><u><span style='font-size:10.0pt;
+font-family:Tahoma'><span style='text-decoration:none'>&nbsp;</span></span></u></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><u><span style='font-size:10.0pt;
+font-family:Tahoma'>Commands:</span></u></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>Commands begin with ':' first non-white character &amp; end
+with ';'. All chars after are ignored.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>;:          Makes comment.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:go;      Executes batch on current  connection.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>go&lt;cr&gt;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:open &lt;connName&gt; to &lt;server&gt; as &lt;user&gt;
+[using &lt;password&gt;] | [prompt]</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>            opens a logical connection where:</span></p>
+
+<ul style='margin-top:0mm' type=disc>
+ <li class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+     font-family:Tahoma'>&lt;connName&gt; is the logical name for this
+     connection.</span></li>
+ <li class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+     font-family:Tahoma'>&lt;server&gt; is the server name from interfaces file
+     or host:port (see jConnect docs.)</span></li>
+ <li class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+     font-family:Tahoma'>&lt;user&gt; is login username</span></li>
+ <li class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+     font-family:Tahoma'>&lt;password&gt; login password</span></li>
+ <li class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+     font-family:Tahoma'>'prompt' MISQL prompts for password - no echo.<br>
+     prompt is “Password (@userName:@server):”</span></li>
+</ul>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:on &lt;connName&gt;;</span></p>
+
+<p class=MsoNormal style='margin-left:35.45pt;text-indent:.55pt;line-height:
+12.0pt'><span style='font-size:10.0pt;font-family:Tahoma'>Make logical
+connection &lt;connName&gt; the <i>active</i> connection. &lt;connName&gt; must
+exist.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:close &lt;connName&gt;;</span></p>
+
+<p class=MsoNormal style='margin-left:35.45pt;text-indent:.55pt;line-height:
+12.0pt'><span style='font-size:10.0pt;font-family:Tahoma'>Close logical
+connection and drop from list of available connections. If this <b>was </b>the <i>active</i>
+connection then there is no current <i>active</i> connection.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:pause &lt;n&gt;;</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Pause execution for &lt;n&gt;
+seconds.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:run &lt;fileName&gt;;</span></p>
+
+<p class=MsoNormal style='margin-left:35.45pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Open script file &lt;fileName&gt;
+and read command; executing them immediately as if entered directly.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:log on &lt;fileName&gt;;</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Open file &lt;fileName&gt; for
+writing and copy all output to it.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:append to &lt;fileName&gt;;</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Append output to file
+&lt;fileName&gt;.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:log off;</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Stop logging output.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:vertical rows &lt;n&gt;|off;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Set the number of vertical row
+columns in the output to &lt;n&gt; as:</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Column Name    Data Row#1      ...Data
+Row #&lt;n&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>|'off': revert to horizontal row
+output.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:set header on|off;</span></p>
+
+<p class=MsoNormal style='margin-right:28.3pt;text-indent:36.0pt;line-height:
+12.0pt'><span style='font-size:10.0pt;font-family:Tahoma'>Output result set
+headings on or off.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:set footer </span><span style='font-size:10.0pt;
+font-family:Tahoma'>on|off;</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Output result set footers on or
+off.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'> </span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:call &lt;sprocName&gt; [@paraName=] [(&lt;type&gt;)]
+[&lt;value&gt;] [return], ... ;</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>Execute command as RPC call where:</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>&lt;@paraName=&gt; sets the
+parameter name.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>(&lt;type&gt;) Cast &lt;value&gt;
+to type &lt;type&gt;.</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>&lt;value&gt; Given value:
+&quot;&quot; string value,</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>            0-9 int value,</span></p>
+
+<p class=MsoNormal style='margin-left:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>            n.n numeric value.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:set colTerm &lt;string&gt;|default;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:set rowTerm &lt;string&gt;|default;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:set prompt &lt;string&gt;;</span></p>
+
+<p class=MsoNormal style='text-indent:36.0pt;line-height:12.0pt'><span
+style='font-size:10.0pt;font-family:Tahoma'>@dbName @connName @userName</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>:on errorSeverity &lt;n&gt; cont|exit|prompt;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>            If returned error serverity is &lt;n&gt; or
+higher do one of the following:</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+12.0pt'><span style='font-size:10.0pt;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;font-family:Tahoma'>Cont – continue
+(the default)</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+12.0pt'><span style='font-size:10.0pt;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;font-family:Tahoma'>Exit – Exit
+MISQL</span></p>
+
+<p class=MsoNormal style='margin-left:72.0pt;text-indent:-18.0pt;line-height:
+12.0pt'><span style='font-size:10.0pt;font-family:"Courier New"'>o<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;font-family:Tahoma'>Prompt – Echo
+failing batch and error and wait for input:<br>
+“Enter r-retry,c-continue,e-exit.</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:12.0pt'><span style='font-size:10.0pt;
+font-family:Tahoma'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

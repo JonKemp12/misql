@@ -1,0 +1,9 @@
+:; First test script to test :run test/script1.sql command
+:set prompt '@{server}:@{connName}.@{dbName}.@{userName}-@{lineNo}> ';
+:open ASEconn to localhost:2540 as sa using "";
+select @@version
+go
+:on default;
+admin version
+go
+exit

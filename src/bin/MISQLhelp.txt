@@ -1,0 +1,73 @@
+MISQL - Multi Interactive SQL
+=============================
+
+Commands:
+Commands begin with ':' first non-white character & end with ';'. All chars after are ignored.
+
+:#	Makes comment.
+
+:go;	Executes batch on current  connection.
+go<cr>
+
+:open <connName> to <server> as <user> [using <password>] | [prompt]
+	opens a logical connection where:
+•	<connName> is the logical name for this connection.
+•	<server> is the server name from interfaces file or host:port (see jConnect docs.)
+•	<user> is login username
+•	<password> login password
+•	'prompt' MISQL prompts for password - no echo.
+prompt is “Password (@userName:@server):”
+
+:on <connName>;
+Make logical connection <connName> the active connection. <connName> must exist.
+
+:close <connName>;
+Close logical connection and drop from list of available connections. If this was the active connection then there is no current active connection.
+
+:pause <n>;
+Pause execution for <n> seconds.
+
+:run <fileName>;
+Open script file <fileName> and read command; executing them immediately as if entered directly.
+
+:log on <fileName>;
+Open file <fileName> for writing and copy all output to it.
+:append to <fileName>;
+Append output to file <fileName>.
+:log off;
+Stop logging output.
+
+:vertical rows <n>|off;
+Set the number of vertical row columns in the output to <n> as:
+Column Name	Data Row#1	...Data Row #<n>
+|'off': revert to horizontal row output.
+
+:set header on|off;
+Output result set headings on or off.
+:set footer on|off;
+Output result set footers on or off.
+ 
+:call <sprocName> [@paraName=] [(<type>)] [<value>] [return], ... ;
+Execute command as RPC call where:
+<@paraName=> sets the parameter name.
+(<type>) Cast <value> to type <type>.
+<value> Given value: "" string value,
+	0-9 int value,
+	n.n numeric value.
+
+:set colTerm <string>|default;
+
+:set rowTerm <string>|default;
+
+:set prompt <string>;
+@{lineNo} @{dbName} @{connName} @{userName} @{server}
+
+:on errorSeverity <n> cont|exit|prompt;
+	If returned error serverity is <n> or higher do one of the following:
+o	Cont – continue (the default)
+o	Exit – Exit MISQL
+o	Prompt – Echo failing batch and error and wait for input:
+“Enter r-retry,c-continue,e-exit.
+
+
+

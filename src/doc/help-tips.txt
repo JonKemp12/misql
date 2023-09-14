@@ -1,0 +1,41 @@
+MiSQL tips:
+ Invoking MiSQL:
+  on UNIX create alias eg:
+   alias misql java -jar $HOME/bin/jLib/misql.jar
+  on Windows create a short cut to normal window with command:
+   C:\WINDOWS\system32\java.exe -jar h:\jek\bin\jLib\misql.jar
+  Environment variable:
+   MISQL_CMD=:run $HOME/.misql.cfg;
+    which contains:
+     :# Set up MISQL environment
+     :set prompt1 "@{connName}.@{dbName}.@{userName}\n@{lineNo}> ";
+     :set prompt "@{lineNo}> ";
+     
+ To produce comma-separated-values from a command:
+   :set HD off; :set FT off; :set CT ','; :set RT '\n'
+   select * from sysprocesses
+   go > sysprocesses.csv
+   
+ To run install script, stopping if errors occur:
+   :onerror 11 prompt
+   :run instmsgs.ebf
+  
+ Working with Replication system:
+   set up connections to each server eg:
+   :open PRS to JRS155 as sa using "";
+   :open PDS to JEK1550 as sa using "";
+   use pdb
+   go
+   :open RDS to JEK1550 as sa using "";
+   use rdb
+   go
+   -- Now can switch in single script, eg:
+   :on PDS;
+   create table jTab ...
+   go
+   :on PRS
+   create replication definition jTab_repdef ...
+   go
+   -- etc
+   
+   

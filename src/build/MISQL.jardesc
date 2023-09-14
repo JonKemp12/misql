@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<jardesc>
+    <jar path="H:/jek/src/misql/misql.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/Misql/build/MISQL.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="true" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="false" mainClassHandleIdentifier="=Misql/src&lt;org.jek.misql{Misql.java[Misql" manifestLocation="/Misql/build/MISQLmanifest" manifestVersion="1.0" reuseManifest="true" saveManifest="true" usesManifest="true">
+        <sealing sealJar="false">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/Misql/.classpath"/>
+        <javaElement handleIdentifier="=Misql/doc"/>
+        <javaElement handleIdentifier="=jConnect6.0"/>
+        <file path="/Misql/.project"/>
+        <javaElement handleIdentifier="=Misql/src"/>
+    </selectedElements>
+</jardesc>

@@ -1,0 +1,13 @@
+:onerror <error severity> <action>
+If the command batch returns an error and the severity is greater than
+ or equal to <error severity> then <action> is taken.
+The <action> is one of:
+ exit   : MiSQL exits immediately.
+ return	: Currently executing script file is exited.
+ prompt : failing batch is displayed and user is prompted to:
+        : Enter r-retry    - to retry the failed batch
+                c-continue - skip and continue
+                q-quit     - quit the current input file
+                e-exit     - exit MiSQL.
+For help enter
+:help <topic>; where topic is commands|open|run|*call|output|set|usage|onerror.

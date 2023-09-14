@@ -1,0 +1,37 @@
+The set command supports the following:
+:set echo|EC on|off;   - Output commands to output devices.
+:set header|HD on|off; - Output result set column name headings on or off.
+:set footer|FT on|off; - Output result set footers ("rows affected")on or off.
+:set colTerm|CT <string>; - Set column terminator string
+	If not set, columns are padded with space to preserve formatting
+	otherwise each column (except the last)is terminated with this string.
+	Supports newline (\n) and tab (\t). 
+:set rowTerm|RT <string>; - set the last column terminator string.
+:set dispWidth|DW <n>; - Set the required display width for formatting 
+    output results.
+:set maxColWidth|CW <n>; - Set a maximum width for character type columns 
+   (default 512 as ISQL).
+:set verticalRows|VR <n>|off;
+	Row results are output in vertical rows, if 'header' is on, the first 
+	column is the column name. Rows are 'squeezed' such that <n> rows fit into
+	the 'dispWidth' across the screen. 'colTerm' and 'rowTerm' are also used.
+	Also, can use special batch executor command:
+vgo <n> which will execute the batch with vertical rows on for this batch only
+    and then reverse back to previous setting.
+:set prompt[1]|PR[P1] <string>; - Set MISQL prompt to <string>.
+	<string> can contain any string including newline (\n) and tab (\t).
+	'prompt1' string is used when the batch line number is 1.
+	'prompt' is used for all other lines (and if prompt1 is NOT set).
+	MISQL local variables can be included:
+		@{lineNo}   - batch line number.
+		@{batchNo}	- current batch number.
+		@{dbName}   - current connection's current database context.
+		@{connName} - current connection's name
+		@{userName} - username of the current connection
+		@{server}   - server name of the current connection
+		@{time}     - system time at the time of output.
+*:set colList|CL <column list>; - Set a list of columns to be included in the 
+    resultset display. <column list> is a comma separated list of column names
+    or column numbers which will control the order and content of each result
+    set returned by the batch. (Not yet implemented.)
+:set history|HI <n>; - Set history length (default = 20)

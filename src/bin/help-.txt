@@ -1,0 +1,26 @@
+MISQL help:
+Multi-ISQL is a Java application designed to look like the traditional ISQL 
+utility as much as possible but contains a number of extensions. All of the 
+ISQL command line options are allowed but some have yet to be implemented.
+MISQL is completely 'stand-alone' and does not require a Sybase installation 
+but does require JRE 1.5 or later.
+MISQL can be started with no command line options but if started with 
+'-U <username>' then it starts as a traditional looking ISQL. 
+However it has been extended to:
+ * Support connections to multiple servers
+ * Directly 'run' script files
+ * [Make RPC calls to servers that do not have a language interpreter.]
+ * Log result output to named files.
+ * Set output format: row and column terminators, vertical rows, prompts etc.
+ 
+All MISQL commands start with : as the first character of a line.
+Multiple commands can be on a single line separated by ';'.
+The environment variable MISQL_CMD may contain one or more of the MISQL 
+commands, separated by ';', which are executed immediately on start up.
+
+For bugs or enhancements: mailto:jon.egerton-kemp@sybase.com
+
+Version 0.3 (20 Sep 2011)
+	
+For help enter
+:help <topic>; where topic is commands|tips|open|run|output|set|usage|onerror.

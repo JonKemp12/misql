@@ -1,0 +1,1 @@
+:open ASEconn to localhost:2540 as sa using "";

@@ -1,0 +1,10 @@
+System.getenv("SYBASE")
+System.getProperty("os.name")
+String[] word = line.split("[; \\t\\n\\x0B\\f\\r]+", 4);
+
+String line = ":go\t 9898; more stuff;";
+line = ":go;";
+String[] word = line.split("[;\\s]+", 3);
+//word[1].matches("\\d+")
+word
+java.util.regex.Pattern.matches("\\s.*", ":go\t 9898; more stuff;")

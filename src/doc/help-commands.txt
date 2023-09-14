@@ -1,0 +1,24 @@
+MISQL commands:
+  :#                 - Makes comment.
+  :go;	             - Executes batch on current connection (same as go<cr>)
+  vgo <n>            - Sets vertical row feature on for this execution only.
+  :open <connName> to <server> as <user> [using <password>] | [prompt]
+                     - opens a logical connection
+  :on <connName>;    - Make logical connection <connName> the active connection.
+  :close <connName>; - Close logical connection
+* :pause <n>;		 - Pause execution for <n> seconds.
+  :run <fileName>;   - Open script file <fileName> and execute immediately.
+* :call <sprocName>[@paraName=] [(<type>)] [<value>] [return], ... ;
+                      - Execute RPC call - see 'help call'
+* :bcp <table> in|out <filename>; - Run basic bulk-copy command
+  :log on <fileName>; - log output to <fileName>.
+  :log off;           - Stop logging output.
+  :set                - Report setting of several display features. 
+                        See :help set for details.
+  :onerror <Severity> cont|exit|prompt; - Set action to perform on error.
+  :status;            - Report current status.
+
+String can be enclosed by "" or '' and any 'special meaning escaped using '\'.
+                [* indicates not yet implemented.]	
+For help enter
+:help <topic>; where topic is commands|open|run|*call|output|set|usage|onerror.

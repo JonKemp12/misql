@@ -1,0 +1,23 @@
+MISQL commands:
+	;:	                - Makes comment.
+	:go;	            - Executes batch on current connection (same as go<cr>)
+	:open <connName> to <server> as <user> [using <password>] | [prompt]
+					    - opens a logical connection
+	:on <connName>;     - Make logical connection <connName> the active connection.
+	:close <connName>;  - Close logical connection
+	:pause <n>;		    - Pause execution for <n> seconds.
+	:run <fileName>;    - Open script file <fileName> and execute immediately.
+	:call <sprocName>[@paraName=] [(<type>)] [<value>] [return], ... ;
+	                    - Execute RPC call - see 'help call'
+	:log on <fileName>; - log output to <fileName>.
+	:log off;           - Stop logging output.
+	:set vertical rows <n>|off; - Output in results <n> vertical rows.
+	:set header on|off; - Output result set headings on or off.
+	:set footer on|off; - Output result set footers on or off.
+	:set colTerm <string>; - Set column terminator string
+	:set rowTerm <string>; - set result row terminator string
+	:set prompt[1] <string>; - Set MISQL prompt to <string>.
+	:on errorSeverity <n> cont|exit|prompt; - Set action on error.
+	
+For help enter
+:help <topic>; where topic is open|run|call|log|set.

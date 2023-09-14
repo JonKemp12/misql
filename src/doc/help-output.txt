@@ -1,0 +1,17 @@
+MISQL support two types of output:
+By default output is sent to System.out or to a file if the '-o <filename>'
+option was given on the command line.
+Output from a single batch command can be redirected using to a file using:
+'>' or '>>' (append) after the "cmdEnd" terminator eg:
+ go > myFile
+will send the output from the batch to myFile and not to the normal output
+device.
+
+In addition the commands:
+:log on <fileName>; or :log append <filename>;
+  will begin copying all output to 'fileName' until turned off using:
+:log off|close;
+
+Input commands can be written back out to the output device and
+log file if the '-e' command line option is given or it has been set using
+:set echo on; command.

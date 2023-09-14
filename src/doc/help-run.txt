@@ -1,0 +1,10 @@
+The :run <filename>; command opens the named file and begins
+running the commands just as if they were typed at the prompt.
+All commands are supported, including nested :run commands
+so infinite recursion is possible!
+Batches are executed when the cmdEnd ("go") is read so this
+behaves differently from the original ':r <batchFile>' command.
+When the file is exhausted or 'quit' is read, control is
+returned to the calling command file or prompt.
+NOTE: 'exit' will cause Misql to exit.
+      No other settings are restored on return.

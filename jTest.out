@@ -1,0 +1,38 @@
+ fid spid status   loginame origname hostname blk_spid dbname tempdbname
+	 cmd               block_xloid 
+ --- ---- -------- -------- -------- -------- -------- ------ ----------
+	 ----------------- ----------- 
+   0    2 sleeping null     null     null            0 master tempdb    
+	 DEADLOCK TUNE               0 
+   0    3 sleeping null     null     null            0 master tempdb    
+	 SHUTDOWN HANDLER            0 
+   0    4 sleeping null     null     null            0 master tempdb    
+	 ASTC HANDLER                0 
+   0    5 sleeping null     null     null            0 master tempdb    
+	 CHECKPOINT SLEEP            0 
+   0    6 sleeping null     null     null            0 master tempdb    
+	 HK WASH                     0 
+   0    7 sleeping null     null     null            0 master tempdb    
+	 HK GC                       0 
+   0    8 sleeping null     null     null            0 master tempdb    
+	 HK CHORES                   0 
+   0    9 sleeping null     null     null            0 master tempdb    
+	 DTC COMMIT SVC              0 
+   0   10 sleeping null     null     null            0 master tempdb    
+	 PORT MANAGER                0 
+   0   11 sleeping null     null     null            0 master tempdb    
+	 NETWORK HANDLER             0 
+   0   14 sleeping null     null     null            0 master tempdb    
+	 LICENSE HEARTBEAT           0 
+   0   22 running  sa       sa       jekxp           0 master tempdb    
+	 INSERT                      0 
+
+(12 rows affected)
+(1 row affected)
+2> 
+3> print 'echo is now on...'
+4> go
+echo is now on...
+default.master.sa
+1> 
+2> exit
